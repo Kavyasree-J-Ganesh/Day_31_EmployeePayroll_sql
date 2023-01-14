@@ -173,3 +173,37 @@ department	varchar(30)	NO
 address	varchar(30)	NO		Bangalore
 */
 
+---Use Case 9---
+---Ability to extend employee_payroll table to have Basic Pay, Deductions, Taxable Pay, Income Tax, Net Pay---
+
+mysql>
+alter table employee_payroll
+add column phone varchar(30) NOT NULL;
+
+mysql>
+alter table employee_payroll
+add column department varchar(30) NOT NULL;
+
+mysql>
+alter table employee_payroll
+add column address varchar(30) NOT NULL default "Bangalore";
+
+
+mysql> desc employee_payroll;
+
+/*
+id	int	NO	PRI
+name	varchar(30)	NO
+gender	varchar(10)	YES
+salary	double	NO
+start_date	date	NO
+phone	varchar(30)	NO
+department	varchar(30)	NO
+address	varchar(30)	NO		Bangalore
+net_pay	varchar(30)	NO
+basic_pay	varchar(30)	NO
+deductions	varchar(30)	NO
+taxable_pay	varchar(30)	NO
+income_tax	varchar(30)	NO
+*/
+
