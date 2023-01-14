@@ -68,3 +68,79 @@ mysql> select * from employee_payroll;
 4	Vaibhav	Male	2800000	2022-07-21
 */
 
+---Use Case 5---
+---Ability to retrieve salary data for a particular employee as well as all employees who have joined in a particular data range from the payroll service database---
+
+mysql>
+select * from employee_payroll
+where name = "Rutik";
+
+/*
+3	Rutik	Male	7000000	2022-09-13
+*/
+
+mysql>
+select * from employee_payroll
+where start_date between cast('2022-08-01' as date)  and date(now());
+
+/*
+1	Sarvesh	Male	6000000	2022-08-22
+2	Prathamesh	Male	8000000	2022-09-11
+3	Rutik	Male	7000000	2022-09-13
+*/
+
+---Use Case 6---
+---Ability to add Gender to Employee Payroll Table and Update the Rows to reflect the correct Employee Gender----
+
+
+mysql> alter table employee_payroll add gender varchar(10) after name;
+
+mysql>desc employee_payroll;
+
+/*
+name	varchar(30)	NO
+gender	varchar(10)	YES
+salary	double	NO
+start_date	date	NO
+*/
+
+mysql>
+update employee_payroll
+set gender = "Male";
+
+mysql> select * from employee_payroll;
+
+/*
+1	Sarvesh	Male	6000000	2022-08-22
+2	Prathamesh	Male	8000000	2022-09-11
+3	Rutik	Male	7000000	2022-09-13
+4	Vaibhav	Male	2800000	2022-07-21
+*/
+
+---Use Case 7---
+---Ability to find sum, average, min, max and number of male and female employees----
+
+mysql> SELECT max(salary) from employee_payroll;
+
+/*8000000*/
+
+mysql> SELECT min(salary) from employee_payroll;
+
+/*2800000*/
+
+mysql> SELECT sum(salary) from employee_payroll;
+
+/*23800000*/
+
+mysql> SELECT avg(salary) from employee_payroll;
+
+/*5950000*/
+
+mysql> select count(*) from employee_payroll  where gender = "Male";
+
+/*4*/
+
+mysql> select count(*) from employee_payroll  where gender = "Female";
+
+/*0*/
+
