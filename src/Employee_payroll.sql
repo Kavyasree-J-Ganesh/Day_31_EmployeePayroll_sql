@@ -144,3 +144,32 @@ mysql> select count(*) from employee_payroll  where gender = "Female";
 
 /*0*/
 
+
+---Use Case 8---
+---Ability to extend employee_payroll data to store employee information like employee phone, address----
+
+mysql>
+alter table employee_payroll
+add column phone varchar(30) NOT NULL;
+
+mysql>
+alter table employee_payroll
+add column department varchar(30) NOT NULL;
+
+mysql>
+alter table employee_payroll
+add column address varchar(30) NOT NULL default "Bangalore";
+
+mysql> desc employee_payroll;
+
+/*
+id	int	NO	PRI		auto_increment
+name	varchar(30)	NO
+gender	varchar(10)	YES
+salary	double	NO
+start_date	date	NO
+phone	varchar(30)	NO
+department	varchar(30)	NO
+address	varchar(30)	NO		Bangalore
+*/
+
