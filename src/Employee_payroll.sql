@@ -38,7 +38,7 @@ employee_payroll
 
 
 ---Use Case 3---
----Ability to insert contact to addressBook---
+---Ability to insert contact to employee_payroll---
 
 mysql>
 insert into employee_payroll(name,salary,start_date)
@@ -55,3 +55,16 @@ mysql> select * from employee_payroll;
 3	Rutik	Male	7000000	2022-09-13
 4	Vaibhav	Male	2800000	2022-07-21
 */
+
+---Use Case 4---
+---Ability to retrieve all the employee payroll data---
+
+mysql> select * from employee_payroll;
+
+/*
+1	Sarvesh	Male	6000000	2022-08-22
+2	Prathamesh	Male	8000000	2022-09-11
+3	Rutik	Male	7000000	2022-09-13
+4	Vaibhav	Male	2800000	2022-07-21
+*/
+
