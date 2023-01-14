@@ -222,4 +222,17 @@ department	varchar(30)	NO
 employee_id	int	YES	MUL
 */
 
+---Use Case 11---
+---Ability to create department table---
+mysql>
+CREATE TABLE department (
+department_id int PRIMARY KEY ,
+department varchar(30) NOT NULL,
+employee_id int,
+FOREIGN KEY (employee_id) REFERENCES employee_payroll(id) );
 
+/*
+department_id	int	NO	PRI
+department	varchar(30)	NO
+employee_id	int	YES	MUL
+*/
