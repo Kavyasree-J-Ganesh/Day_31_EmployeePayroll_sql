@@ -249,3 +249,8 @@ alter table employee_payroll
 add constraint FOREIGN KEY(payrol_id) references payroll(payroll_id);
 
 Er diagram image :  "/img.png"
+
+---Use Case 12---
+---Ensure all retrieve queries done especially in UC 4, UC 5 and UC 7 are working with new table structure---
+
+verified
