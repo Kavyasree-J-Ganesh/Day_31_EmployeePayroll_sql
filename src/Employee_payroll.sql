@@ -223,16 +223,29 @@ employee_id	int	YES	MUL
 */
 
 ---Use Case 11---
----Ability to create department table---
+---Implement the ER Diagram into Payroll Service DB---
 mysql>
-CREATE TABLE department (
-department_id int PRIMARY KEY ,
-department varchar(30) NOT NULL,
-employee_id int,
-FOREIGN KEY (employee_id) REFERENCES employee_payroll(id) );
 
-/*
-department_id	int	NO	PRI
-department	varchar(30)	NO
-employee_id	int	YES	MUL
-*/
+CREATE TABLE company (
+company_id int PRIMARY KEY ,
+company_name varchar(30) NOT NULL);
+
+CREATE TABLE payroll (
+			payroll_id int PRIMARY KEY ,
+			payroll_name varchar(30) NOT NULL,
+            employee_id int,
+			FOREIGN KEY (employee_id) REFERENCES employee_payroll(id) );
+
+
+CREATE TABLE company (
+			company_id int PRIMARY KEY ,
+			company_name varchar(30) NOT NULL);
+
+alter table employee_payroll
+add column company_id int,
+add constraint FOREIGN KEY(company_id) references company(company_id);
+
+alter table employee_payroll
+add constraint FOREIGN KEY(payrol_id) references payroll(payroll_id);
+
+Er diagram image :  "/img.png"
