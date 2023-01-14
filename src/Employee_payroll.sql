@@ -14,3 +14,22 @@ performance_schema
 sakila
 sys
 world */
+
+---Use Case 2---
+---Ability to create a employee payroll table---
+
+mysql>
+create table employee_payroll(
+id int not null auto_increment,
+name varchar(30) not null ,
+salary double not null,
+start_date date not null,
+primary key(id)
+);
+
+mysql> show tables;
+
+/*
+addressbook
+employee_payroll
+*/
