@@ -117,3 +117,30 @@ mysql> select * from employee_payroll;
 4	Vaibhav	Male	2800000	2022-07-21
 */
 
+---Use Case 7---
+---Ability to find sum, average, min, max and number of male and female employees----
+
+mysql> SELECT max(salary) from employee_payroll;
+
+/*8000000*/
+
+mysql> SELECT min(salary) from employee_payroll;
+
+/*2800000*/
+
+mysql> SELECT sum(salary) from employee_payroll;
+
+/*23800000*/
+
+mysql> SELECT avg(salary) from employee_payroll;
+
+/*5950000*/
+
+mysql> select count(*) from employee_payroll  where gender = "Male";
+
+/*4*/
+
+mysql> select count(*) from employee_payroll  where gender = "Female";
+
+/*0*/
+
