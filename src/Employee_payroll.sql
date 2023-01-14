@@ -3,6 +3,8 @@
 
 mysql>create database payroll_service;
 1 row(s) affected
+---Use Case 2---
+---Ability to create a payroll_service---
 
 mysql>show databases
 /*
@@ -32,4 +34,24 @@ mysql> show tables;
 /*
 addressbook
 employee_payroll
+*/
+
+
+---Use Case 3---
+---Ability to insert contact to addressBook---
+
+mysql>
+insert into employee_payroll(name,salary,start_date)
+values("Sarvesh",6000000.0,'2022-08-22'),
+("Prathamesh",8000000.0,'2022-09-11'),
+("Rutik",7000000.0,'2022-09-13'),
+("Vaibhav",6000000.0,'2022-07-21');
+
+mysql> select * from employee_payroll;
+
+/*
+1	Sarvesh	Male	6000000	2022-08-22
+2	Prathamesh	Male	8000000	2022-09-11
+3	Rutik	Male	7000000	2022-09-13
+4	Vaibhav	Male	2800000	2022-07-21
 */
