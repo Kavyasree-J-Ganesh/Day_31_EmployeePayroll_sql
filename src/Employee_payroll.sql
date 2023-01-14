@@ -68,3 +68,23 @@ mysql> select * from employee_payroll;
 4	Vaibhav	Male	2800000	2022-07-21
 */
 
+---Use Case 5---
+---Ability to retrieve salary data for a particular employee as well as all employees who have joined in a particular data range from the payroll service database---
+
+mysql>
+select * from employee_payroll
+where name = "Rutik";
+
+/*
+3	Rutik	Male	7000000	2022-09-13
+*/
+
+mysql>
+select * from employee_payroll
+where start_date between cast('2022-08-01' as date)  and date(now());
+
+/*
+1	Sarvesh	Male	6000000	2022-08-22
+2	Prathamesh	Male	8000000	2022-09-11
+3	Rutik	Male	7000000	2022-09-13
+*/
